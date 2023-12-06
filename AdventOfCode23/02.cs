@@ -39,22 +39,21 @@ namespace AdventOfCode23
                 string colorInfo = gameParts[1].Trim();
                 string[] colorQuantities = colorInfo.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
 
-                Console.WriteLine($"Spiel {gameNumber}:");
-                Console.WriteLine($"Info: {colorInfo}");
+                //Console.WriteLine($"Spiel {gameNumber}:");
+                //Console.WriteLine($"Info: {colorInfo}");
 
 
                 foreach (var colorQuantity in colorQuantities)
                 {
-                    Console.WriteLine($"Quantity: {colorQuantity}");
+                    //Console.WriteLine($"Quantity: {colorQuantity}");
                     string[] parts = colorQuantity.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
 
                     foreach (var part in parts)
                     {
-                        //string string_digit = part.Trim().Substring(0, 1);
                         string resultString = Regex.Match(part, @"\d+").Value;
                         int int_digit = Int32.Parse(resultString);
 
-                        Console.WriteLine("digit: " + int_digit);
+                        //Console.WriteLine("digit: " + int_digit);
                         if (part.Contains("blue"))
                         {
                             if(min_blue < int_digit) min_blue = int_digit;
